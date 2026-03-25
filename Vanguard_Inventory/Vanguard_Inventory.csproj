@@ -147,14 +147,66 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Analytics.cs" />
+    <Compile Include="Models\Ledger.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\StockInfo.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AnalyticsService.cs" />
     <Compile Include="Services\DatabaseService.cs" />
+    <Compile Include="Services\LedgerService.cs" />
+    <Compile Include="Services\SeedData.cs" />
     <Compile Include="Services\SessionManager.cs" />
+    <Compile Include="UserControls\AddProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddProductForm.Designer.cs">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucCatalog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucCatalog.Designer.cs" />
+    <Compile Include="UserControls\ucLedger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucLedger.Designer.cs">
+      <DependentUpon>ucLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -164,7 +216,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\AddProductForm.resx">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucCatalog.resx">
+      <DependentUpon>ucCatalog.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -182,6 +241,18 @@
   <ItemGroup>
     <Folder Include="Components\" />
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Van.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vanguardlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\V.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vanguard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

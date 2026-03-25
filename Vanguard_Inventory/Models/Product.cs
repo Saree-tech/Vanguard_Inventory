@@ -6,7 +6,7 @@ namespace Vanguard_Inventory.Models
 {
     public class Product
     {
-        [BsonId] // This is the primary key for MongoDB
+        [BsonId]
         public ObjectId Id { get; set; }
 
         [BsonElement("sku")]
@@ -15,20 +15,21 @@ namespace Vanguard_Inventory.Models
         [BsonElement("name")]
         public string Name { get; set; }
 
+        [BsonElement("description")]
+        public string Description { get; set; }
+
         [BsonElement("price")]
         public decimal Price { get; set; }
 
-        // We embed the stock info directly for better performance
+        [BsonElement("category")]
+        public string Category { get; set; }
+
+        // This is the embedded stock info
+        [BsonElement("stock")]
         public StockInfo Stock { get; set; }
 
         // Useful for the "Omnibox" global search
+        [BsonElement("tags")]
         public List<string> Tags { get; set; } = new List<string>();
-    }
-
-    public class StockInfo
-    {
-        public int Current { get; set; }
-        public int MinThreshold { get; set; }
-        public int MaxCapacity { get; set; }
     }
 }

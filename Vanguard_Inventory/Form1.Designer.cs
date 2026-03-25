@@ -27,6 +27,7 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.pnlTopBar = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -83,7 +84,7 @@
             this.pnlNavIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(255)))));
             this.pnlNavIndicator.Location = new System.Drawing.Point(0, 225);
             this.pnlNavIndicator.Name = "pnlNavIndicator";
-            this.pnlNavIndicator.Size = new System.Drawing.Size(6, 62);
+            this.pnlNavIndicator.Size = new System.Drawing.Size(4, 62);
             this.pnlNavIndicator.TabIndex = 0;
             // 
             // btnSettings
@@ -98,8 +99,9 @@
             this.btnSettings.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnSettings.Size = new System.Drawing.Size(260, 62);
             this.btnSettings.TabIndex = 1;
-            this.btnSettings.Text = "Settings";
+            this.btnSettings.Text = "⚙️ Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.UseVisualStyleBackColor = true;
             // 
             // btnUsers
             // 
@@ -113,8 +115,9 @@
             this.btnUsers.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnUsers.Size = new System.Drawing.Size(260, 62);
             this.btnUsers.TabIndex = 2;
-            this.btnUsers.Text = "Users";
+            this.btnUsers.Text = "👥 Users";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsers.UseVisualStyleBackColor = true;
             // 
             // btnLedger
             // 
@@ -128,8 +131,9 @@
             this.btnLedger.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnLedger.Size = new System.Drawing.Size(260, 62);
             this.btnLedger.TabIndex = 3;
-            this.btnLedger.Text = "Ledger";
+            this.btnLedger.Text = "📋 Ledger";
             this.btnLedger.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLedger.UseVisualStyleBackColor = true;
             // 
             // btnCatalog
             // 
@@ -143,8 +147,9 @@
             this.btnCatalog.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnCatalog.Size = new System.Drawing.Size(260, 62);
             this.btnCatalog.TabIndex = 4;
-            this.btnCatalog.Text = "Catalog";
+            this.btnCatalog.Text = "📦 Catalog";
             this.btnCatalog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCatalog.UseVisualStyleBackColor = true;
             // 
             // btnDashboard
             // 
@@ -158,8 +163,9 @@
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnDashboard.Size = new System.Drawing.Size(260, 62);
             this.btnDashboard.TabIndex = 5;
-            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.Text = "📊 Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.UseVisualStyleBackColor = true;
             // 
             // picLogo
             // 
@@ -175,6 +181,7 @@
             // pnlTopBar
             // 
             this.pnlTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.pnlTopBar.Controls.Add(this.btnRefresh);
             this.pnlTopBar.Controls.Add(this.btnClose);
             this.pnlTopBar.Controls.Add(this.btnMaximize);
             this.pnlTopBar.Controls.Add(this.btnMinimize);
@@ -183,9 +190,24 @@
             this.pnlTopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopBar.Location = new System.Drawing.Point(261, 1);
             this.pnlTopBar.Name = "pnlTopBar";
-            this.pnlTopBar.Size = new System.Drawing.Size(1063, 75);
+            this.pnlTopBar.Size = new System.Drawing.Size(1063, 70);
             this.pnlTopBar.TabIndex = 1;
             this.pnlTopBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopBar_MouseDown);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(837, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(71, 33);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "⟳ Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnClose
             // 
@@ -193,13 +215,14 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(69)))), ((int)(((byte)(58)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(1018, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(45, 35);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "✕";
+            this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnMaximize
@@ -207,13 +230,14 @@
             this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximize.FlatAppearance.BorderSize = 0;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnMaximize.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnMaximize.ForeColor = System.Drawing.Color.White;
             this.btnMaximize.Location = new System.Drawing.Point(973, 0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(45, 35);
             this.btnMaximize.TabIndex = 3;
-            this.btnMaximize.Text = "▢";
+            this.btnMaximize.Text = "□";
+            this.btnMaximize.UseVisualStyleBackColor = true;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // btnMinimize
@@ -221,38 +245,39 @@
             this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
             this.btnMinimize.Location = new System.Drawing.Point(928, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(45, 35);
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.Text = "—";
+            this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // lblMongoStatus
             // 
             this.lblMongoStatus.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblMongoStatus.AutoSize = true;
-            this.lblMongoStatus.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblMongoStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblMongoStatus.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblMongoStatus.Location = new System.Drawing.Point(548, 22);
+            this.lblMongoStatus.Location = new System.Drawing.Point(593, 26);
             this.lblMongoStatus.Name = "lblMongoStatus";
-            this.lblMongoStatus.Size = new System.Drawing.Size(236, 28);
+            this.lblMongoStatus.Size = new System.Drawing.Size(113, 25);
             this.lblMongoStatus.TabIndex = 0;
-            this.lblMongoStatus.Text = "● MongoDB: Connected";
+            this.lblMongoStatus.Text = "● Connected";
             this.lblMongoStatus.Click += new System.EventHandler(this.lblMongo_Click);
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic);
-            this.lblName.ForeColor = System.Drawing.Color.LightGray;
-            this.lblName.Location = new System.Drawing.Point(22, 22);
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(20, 20);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(342, 28);
+            this.lblName.Size = new System.Drawing.Size(383, 32);
             this.lblName.TabIndex = 1;
-            this.lblName.Text = "VANGUARD SMART INVENTORY v1.0";
+            this.lblName.Text = "VANGUARD SMART INVENTORY";
             // 
             // pnlMainContent
             // 
@@ -261,10 +286,10 @@
             this.pnlMainContent.Controls.Add(this.flpStatCards);
             this.pnlMainContent.Controls.Add(this.lblPageTitle);
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainContent.Location = new System.Drawing.Point(261, 76);
+            this.pnlMainContent.Location = new System.Drawing.Point(261, 71);
             this.pnlMainContent.Name = "pnlMainContent";
             this.pnlMainContent.Padding = new System.Windows.Forms.Padding(30);
-            this.pnlMainContent.Size = new System.Drawing.Size(1063, 791);
+            this.pnlMainContent.Size = new System.Drawing.Size(1063, 796);
             this.pnlMainContent.TabIndex = 0;
             // 
             // pnlLowerSection
@@ -275,7 +300,7 @@
             this.pnlLowerSection.Location = new System.Drawing.Point(30, 250);
             this.pnlLowerSection.Name = "pnlLowerSection";
             this.pnlLowerSection.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.pnlLowerSection.Size = new System.Drawing.Size(1003, 511);
+            this.pnlLowerSection.Size = new System.Drawing.Size(1003, 516);
             this.pnlLowerSection.TabIndex = 2;
             // 
             // pnlCriticalAlerts
@@ -286,7 +311,7 @@
             this.pnlCriticalAlerts.Location = new System.Drawing.Point(630, 20);
             this.pnlCriticalAlerts.Name = "pnlCriticalAlerts";
             this.pnlCriticalAlerts.Padding = new System.Windows.Forms.Padding(20);
-            this.pnlCriticalAlerts.Size = new System.Drawing.Size(373, 491);
+            this.pnlCriticalAlerts.Size = new System.Drawing.Size(373, 496);
             this.pnlCriticalAlerts.TabIndex = 3;
             // 
             // lblCriticalTitle
@@ -296,9 +321,9 @@
             this.lblCriticalTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(69)))), ((int)(((byte)(58)))));
             this.lblCriticalTitle.Location = new System.Drawing.Point(15, 15);
             this.lblCriticalTitle.Name = "lblCriticalTitle";
-            this.lblCriticalTitle.Size = new System.Drawing.Size(159, 32);
+            this.lblCriticalTitle.Size = new System.Drawing.Size(200, 32);
             this.lblCriticalTitle.TabIndex = 0;
-            this.lblCriticalTitle.Text = "Critical Risks";
+            this.lblCriticalTitle.Text = "⚠️ Critical Risks";
             // 
             // pnlGraphContainer
             // 
@@ -307,7 +332,7 @@
             this.pnlGraphContainer.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlGraphContainer.Location = new System.Drawing.Point(0, 20);
             this.pnlGraphContainer.Name = "pnlGraphContainer";
-            this.pnlGraphContainer.Size = new System.Drawing.Size(630, 491);
+            this.pnlGraphContainer.Size = new System.Drawing.Size(630, 496);
             this.pnlGraphContainer.TabIndex = 2;
             // 
             // lblGraphTitle
@@ -317,9 +342,9 @@
             this.lblGraphTitle.ForeColor = System.Drawing.Color.White;
             this.lblGraphTitle.Location = new System.Drawing.Point(20, 15);
             this.lblGraphTitle.Name = "lblGraphTitle";
-            this.lblGraphTitle.Size = new System.Drawing.Size(433, 32);
+            this.lblGraphTitle.Size = new System.Drawing.Size(474, 32);
             this.lblGraphTitle.TabIndex = 0;
-            this.lblGraphTitle.Text = "Stock Depletion Trend (Last 30 Days)";
+            this.lblGraphTitle.Text = "📈 Stock Depletion Trend (Last 30 Days)";
             // 
             // flpStatCards
             // 
@@ -346,23 +371,24 @@
             // lblCardValueData
             // 
             this.lblCardValueData.AutoSize = true;
-            this.lblCardValueData.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblCardValueData.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
             this.lblCardValueData.ForeColor = System.Drawing.Color.White;
-            this.lblCardValueData.Location = new System.Drawing.Point(12, 55);
+            this.lblCardValueData.Location = new System.Drawing.Point(3, 55);
             this.lblCardValueData.Name = "lblCardValueData";
-            this.lblCardValueData.Size = new System.Drawing.Size(195, 54);
+            this.lblCardValueData.Size = new System.Drawing.Size(84, 65);
             this.lblCardValueData.TabIndex = 0;
-            this.lblCardValueData.Text = "$452,890";
+            this.lblCardValueData.Text = "$0";
             // 
             // lblCardValueTitle
             // 
             this.lblCardValueTitle.AutoSize = true;
+            this.lblCardValueTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblCardValueTitle.ForeColor = System.Drawing.Color.DarkGray;
             this.lblCardValueTitle.Location = new System.Drawing.Point(15, 20);
             this.lblCardValueTitle.Name = "lblCardValueTitle";
-            this.lblCardValueTitle.Size = new System.Drawing.Size(158, 20);
+            this.lblCardValueTitle.Size = new System.Drawing.Size(269, 28);
             this.lblCardValueTitle.TabIndex = 1;
-            this.lblCardValueTitle.Text = "Total Inventory Value";
+            this.lblCardValueTitle.Text = "💰 TOTAL INVENTORY VALUE";
             // 
             // pnlCardAlert
             // 
@@ -378,23 +404,24 @@
             // lblCardAlertData
             // 
             this.lblCardAlertData.AutoSize = true;
-            this.lblCardAlertData.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblCardAlertData.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
             this.lblCardAlertData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(69)))), ((int)(((byte)(58)))));
-            this.lblCardAlertData.Location = new System.Drawing.Point(12, 55);
+            this.lblCardAlertData.Location = new System.Drawing.Point(3, 55);
             this.lblCardAlertData.Name = "lblCardAlertData";
-            this.lblCardAlertData.Size = new System.Drawing.Size(186, 54);
+            this.lblCardAlertData.Size = new System.Drawing.Size(194, 65);
             this.lblCardAlertData.TabIndex = 0;
-            this.lblCardAlertData.Text = "12 Items";
+            this.lblCardAlertData.Text = "0 Items";
             // 
             // lblCardAlertTitle
             // 
             this.lblCardAlertTitle.AutoSize = true;
+            this.lblCardAlertTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblCardAlertTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.lblCardAlertTitle.Location = new System.Drawing.Point(15, 20);
             this.lblCardAlertTitle.Name = "lblCardAlertTitle";
-            this.lblCardAlertTitle.Size = new System.Drawing.Size(124, 20);
+            this.lblCardAlertTitle.Size = new System.Drawing.Size(170, 28);
             this.lblCardAlertTitle.TabIndex = 1;
-            this.lblCardAlertTitle.Text = "CRITICAL RISK";
+            this.lblCardAlertTitle.Text = "⚠️ ITEMS AT RISK";
             // 
             // pnlCardStock
             // 
@@ -410,34 +437,35 @@
             // lblCardStockData
             // 
             this.lblCardStockData.AutoSize = true;
-            this.lblCardStockData.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblCardStockData.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
             this.lblCardStockData.ForeColor = System.Drawing.Color.PaleGreen;
-            this.lblCardStockData.Location = new System.Drawing.Point(12, 55);
+            this.lblCardStockData.Location = new System.Drawing.Point(3, 55);
             this.lblCardStockData.Name = "lblCardStockData";
-            this.lblCardStockData.Size = new System.Drawing.Size(126, 54);
+            this.lblCardStockData.Size = new System.Drawing.Size(56, 65);
             this.lblCardStockData.TabIndex = 0;
-            this.lblCardStockData.Text = "2,450";
+            this.lblCardStockData.Text = "0";
             // 
             // lblCardStockTitle
             // 
             this.lblCardStockTitle.AutoSize = true;
+            this.lblCardStockTitle.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblCardStockTitle.ForeColor = System.Drawing.Color.LightGray;
             this.lblCardStockTitle.Location = new System.Drawing.Point(15, 20);
             this.lblCardStockTitle.Name = "lblCardStockTitle";
-            this.lblCardStockTitle.Size = new System.Drawing.Size(135, 20);
+            this.lblCardStockTitle.Size = new System.Drawing.Size(246, 28);
             this.lblCardStockTitle.TabIndex = 1;
-            this.lblCardStockTitle.Text = "ITEMS IN STOCK";
+            this.lblCardStockTitle.Text = "📦 TOTAL ITEMS IN STOCK";
             // 
             // lblPageTitle
             // 
             this.lblPageTitle.AutoSize = true;
             this.lblPageTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblPageTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
+            this.lblPageTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
             this.lblPageTitle.ForeColor = System.Drawing.Color.White;
             this.lblPageTitle.Location = new System.Drawing.Point(30, 30);
             this.lblPageTitle.Name = "lblPageTitle";
             this.lblPageTitle.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
-            this.lblPageTitle.Size = new System.Drawing.Size(265, 80);
+            this.lblPageTitle.Size = new System.Drawing.Size(273, 80);
             this.lblPageTitle.TabIndex = 1;
             this.lblPageTitle.Text = "Dashboard";
             // 
@@ -452,6 +480,7 @@
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Vanguard Smart Inventory";
             this.pnlSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnlTopBar.ResumeLayout(false);
@@ -476,19 +505,20 @@
 
         #endregion
 
-        // FIELD DECLARATIONS (Ensure these match your InitializeComponent code)
+        // FIELD DECLARATIONS
         private System.Windows.Forms.Panel pnlSidebar;
-        private System.Windows.Forms.Panel pnlTopBar; // Fixed: was missing
+        private System.Windows.Forms.Panel pnlTopBar;
         private System.Windows.Forms.Panel pnlMainContent;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnSettings;
-        private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.Button btnLedger;
+        private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.Button btnCatalog;
-        private System.Windows.Forms.Button btnClose; // Fixed: was missing
-        private System.Windows.Forms.Button btnMaximize; // Fixed: was missing
-        private System.Windows.Forms.Button btnMinimize; // Fixed: was missing
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnMaximize;
+        private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lblMongoStatus;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel pnlNavIndicator;

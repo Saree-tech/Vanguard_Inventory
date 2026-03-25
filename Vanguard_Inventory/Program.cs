@@ -1,27 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vanguard_Inventory.Services; // IMPORTANT: This tells the app where our Service is
+using Vanguard_Inventory.Services;
 
 namespace Vanguard_Inventory
 {
-    internal static class Program
+    static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Turn on the Database connection here
+            // Initialize database connection
             DatabaseService.Initialize();
 
-            Application.Run(new Form1());
+            // Show login form
+            using (var loginForm = new LoginForm())
+            {
+                if (loginForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Login successful, open main form
+                    Application.Run(new Form1());
+                }
+                else
+                {
+                    // Login cancelled or failed
+                    return;
+                }
+            }
         }
     }
 }
